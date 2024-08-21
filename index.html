@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Montante</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 500px;
+            margin-top: 50px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Calculadora de Montante</h1>
+        <form id="calculator-form">
+            <div class="form-group">
+                <label for="capital">Capital (R$):</label>
+                <input type="number" id="capital" class="form-control" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="taxa">Taxa de Juros (% ao ano):</label>
+                <input type="number" id="taxa" class="form-control" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="periodo">Período (anos):</label>
+                <input type="number" id="periodo" class="form-control" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Tipo de Juros:</label>
+                <div class="form-check">
+                    <input type="radio" name="tipo" id="tipoSimples" value="simples" class="form-check-input" checked>
+                    <label for="tipoSimples" class="form-check-label">Juros Simples</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="tipo" id="tipoCompostos" value="compostos" class="form-check-input">
+                    <label for="tipoCompostos" class="form-check-label">Juros Compostos</label>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-primary" onclick="calcular()">Calcular</button>
+                <button type="button" class="btn btn-secondary" onclick="limpar()">Limpar</button>
+            </div>
+            <div id="resultado" class="result text-center"></div>
+        </form>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
